@@ -1,0 +1,54 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Australian marriage and divorce count by age group in 2024",
+  "width": 500,
+  "height": 300,
+  "params": [
+    {
+      "name": "Rate_type",
+      "value": "Marriages",
+      "bind": {
+        "input": "select",
+        "options": ["Marriages", "Divorces"],
+        "labels": ["Marriages", "Divorces"],
+        "name": "Select Rate: "
+      }
+    }
+  ],
+
+  "data": {
+    "url": "data/Marriage and divorce rate by age group.csv",
+    "format": { "type": "csv" }
+  },
+
+  "transform": [
+    {
+      "calculate": "toNumber(datum[Rate_type])",
+      "as": "Selected_rate"
+    }
+  ],
+
+  "mark": "bar",
+
+  "encoding": {
+    "x": { "field": "Age group", "type": "ordinal", "title": "Age Group" },
+    "y": {
+      "field": "Selected_rate",
+      "type": "quantitative",
+      "title": "Count",
+      "scale": { "domain": [0, 70000] }
+    },
+    "color": {
+      "condition": {
+        "test": "datum[Rate_type] == datum.Marriages",
+        "value": "#C5A8E0"
+      },
+      "value": "#F0AD73"
+    },
+    "tooltip": [
+      { "field": "Age group", "type": "nominal", "title": "Age group" },
+      { "field": "Selected_rate", "type": "quantitative", "title": "Count", "format": ","}
+    ]
+  },
+  "config": { "title": { "font": "sans-serif", "fontSize": 16 } }
+}
