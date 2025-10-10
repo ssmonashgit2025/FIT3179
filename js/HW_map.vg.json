@@ -23,7 +23,7 @@
                   "lookup": "properties.STE_NAME21",
                   "from": {
                     "data": {
-                      "url": "data/Marriage and divorce rate by state.csv"
+                      "url": "https://raw.githubusercontent.com/ssmonashgit2025/FIT3179/refs/heads/main/data/Marriage%20and%20divorce%20rate%20by%20state.csv"
                     },
                     "key": "State",
                     "fields": ["Marriage_rate", "Marriages_tot"]

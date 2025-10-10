@@ -17,7 +17,7 @@
   ],
 
   "data": {
-    "url": "data/Marriage and divorce rate by age group.csv",
+    "url": "https://raw.githubusercontent.com/ssmonashgit2025/FIT3179/refs/heads/main/data/Marriage%20and%20divorce%20rate%20by%20age%20group.csv",
     "format": { "type": "csv" }
   },
 
