@@ -20,35 +20,58 @@
     "url": "https://raw.githubusercontent.com/ssmonashgit2025/FIT3179/refs/heads/main/data/Marriage%20and%20divorce%20rate%20by%20age%20group.csv",
     "format": { "type": "csv" }
   },
-
   "transform": [
     {
       "calculate": "toNumber(datum[Rate_type])",
       "as": "Selected_rate"
     }
   ],
-
-  "mark": "bar",
-
   "encoding": {
     "x": { "field": "Age group", "type": "ordinal", "title": "Age Group" },
     "y": {
       "field": "Selected_rate",
       "type": "quantitative",
       "title": "Count",
-      "scale": { "domain": [0, 70000] }
-    },
-    "color": {
-      "condition": {
-        "test": "datum[Rate_type] == datum.Marriages",
-        "value": "#C5A8E0"
-      },
-      "value": "#F0AD73"
-    },
-    "tooltip": [
-      { "field": "Age group", "type": "nominal", "title": "Age group" },
-      { "field": "Selected_rate", "type": "quantitative", "title": "Count", "format": ","}
-    ]
+      "scale": { "domain": [0, 75000] }
+    }
   },
-  "config": { "title": { "font": "sans-serif", "fontSize": 16 } }
+  "layer": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "color": {
+          "condition": {
+            "test": "datum[Rate_type] == datum.Marriages",
+            "value": "#C5A8E0"
+          },
+          "value": "#F0AD73"
+        },
+        "tooltip": [
+          { "field": "Age group", "type": "nominal", "title": "Age group" },
+          {
+            "field": "Selected_rate",
+            "type": "quantitative",
+            "title": "Count",
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dy": -12,
+        "dx": 15,
+        "fontSize": 11.5,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "text": { "field": "Selected_rate", "type": "quantitative", "format": ","},
+        "color": { "value": "black" }
+      }
+    }
+  ],
+  "config": { "title": { "font": "sans-serif", "fontSize": 16 }}
 }

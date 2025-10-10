@@ -49,7 +49,7 @@
                 "tooltip": [
                   {"field": "properties.STE_NAME21", "type": "nominal", "title": "State" },
                   {"field": "Marriage_rate", "type": "quantitative", "title": "Marriages per 1000 people", "format":".2f" },
-                  {"field": "Marriages_tot", "type": "quantitative", "title": "Total marriages"}
+                  {"field": "Marriages_tot", "type": "quantitative", "title": "Total marriages", "format": ","}
                 ]
               }
             },
