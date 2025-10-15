@@ -1,0 +1,38 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Global Same-sex marriage rates",
+  "background": "#f5f5ea",
+  "width": 300,
+  "height": 300,
+
+  "data": {
+    "url": "data/Same-sex marriage prop by country.csv",
+    "format": { "type": "csv" }
+  },
+  "encoding": {
+    "x": {
+      "field": "Country",
+      "type": "nominal",
+      "title": "Country",
+      "axis": { "labelAngle": 90 }
+    },
+    "y": {
+      "field": "Share",
+      "type": "quantitative",
+      "title": "Rate"
+    }
+  },
+  "layer": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "color": {
+          "value": "#2596be"
+
+        },
+        "tooltip": null
+      }
+    }
+  ],
+  "config": { "title": { "font": "sans-serif", "fontSize": 16 } }
+}

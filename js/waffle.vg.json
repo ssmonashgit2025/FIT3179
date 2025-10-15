@@ -1,0 +1,42 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "data/Same-sex marriage wafflechart.csv"
+  },
+
+  "title": "Proportion of same-sex marriages",
+  "background": "#f5f5ea",
+  "width": 300,
+  "height": 300,
+  "layer": [
+    {
+      "mark": { "type": "rect", "stroke": "#f5f5ea", "strokeWidth": 2 },
+      "encoding": {
+        "x": {
+          "field": "Column",
+          "type": "ordinal",
+          "title": null,
+          "axis": null,
+          "sort": { "field": "Value", "order": "descending" }
+        },
+        "y": {
+          "field": "Row",
+          "type": "ordinal",
+          "title": null,
+          "axis": null,
+          "sort": "y"
+        },
+        "color": {
+          "field": "Value",
+          "type": "quantitative",
+          "scale": {
+            "domain": [0, 1],
+            "range": ["lightgray", "#2596be"]
+          },
+          "legend": null
+        }
+      }
+    }
+  ],
+  "config": { "title": { "font": "sans-serif", "fontSize": 16 } }
+}

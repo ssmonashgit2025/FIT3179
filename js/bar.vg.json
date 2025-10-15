@@ -1,0 +1,78 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Australian marriage and divorce count by age group in 2024",
+  "background": "#f5f5ea",
+  "width": 300,
+  "height": 300,
+  "params": [
+    {
+      "name": "Rate_type",
+      "value": "Marriages",
+      "bind": {
+        "input": "select",
+        "options": ["Marriages", "Divorces"],
+        "labels": ["Marriages", "Divorces"],
+        "name": "Select Rate: "
+      }
+    }
+  ],
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/ssmonashgit2025/FIT3179/refs/heads/main/data/Marriage%20and%20divorce%20rate%20by%20age%20group.csv",
+    "format": { "type": "csv" }
+  },
+  "transform": [
+    {
+      "calculate": "toNumber(datum[Rate_type])",
+      "as": "Selected_rate"
+    }
+  ],
+  "encoding": {
+    "x": { "field": "Age group", "type": "ordinal", "title": "Age Group", "axis": {"labelAngle":0} },
+    "y": {
+      "field": "Selected_rate",
+      "type": "quantitative",
+      "title": "Count",
+      "scale": { "domain": [0, 75000] }
+    }
+  },
+  "layer": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "color": {
+          "condition": {
+            "test": "datum[Rate_type] == datum.Marriages",
+            "value": "#C5A8E0"
+          },
+          "value": "#F0AD73"
+        },
+        "tooltip": [
+          { "field": "Age group", "type": "nominal", "title": "Age group" },
+          {
+            "field": "Selected_rate",
+            "type": "quantitative",
+            "title": "Count",
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dy": -12,
+        "dx": 15,
+        "fontSize": 11.5,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "text": { "field": "Selected_rate", "type": "quantitative", "format": ","},
+        "color": { "value": "black" }
+      }
+    }
+  ],
+  "config": { "title": { "font": "sans-serif", "fontSize": 16 }}
+}

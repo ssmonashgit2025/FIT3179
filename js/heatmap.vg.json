@@ -1,0 +1,53 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "data/Marriage month heatmap.csv"
+  },
+  "title": "Heatmap of marriage numbers broken down by month",
+  "background": "#f5f5ea",
+  "width": 1200,
+  "height": 130,
+  "layer": [
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Month",
+          "type": "ordinal",
+          "title": "Month",
+          "axis": {
+            "labelAngle": 0
+          },
+          "sort": [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
+          ]
+        },
+        "y": {
+          "field": "Year",
+          "type": "ordinal",
+          "title": "Year"
+        },
+        "color": {
+          "field": "Marriage count",
+          "type": "quantitative",
+          "scale": { "scheme": "purples" },
+          "legend": {
+            "title": null
+          }
+        }
+      }
+    }
+  ],
+  "config": { "title": { "font": "sans-serif", "fontSize": 16 } }
+}
