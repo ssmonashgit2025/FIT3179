@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
-    "url": "data/Marriage month heatmap.csv"
+    "url": "https://raw.githubusercontent.com/ssmonashgit2025/FIT3179/refs/heads/main/data/Marriage%20month%20heatmap.csv"
   },
   "title": "Heatmap of marriage numbers broken down by month",
   "background": "#f5f5ea",

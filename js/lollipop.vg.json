@@ -6,7 +6,7 @@
   "height": 300,
 
   "data": {
-    "url": "data/Same-sex marriage prop by country.csv",
+    "url": "https://raw.githubusercontent.com/ssmonashgit2025/FIT3179/refs/heads/main/data/Same-sex%20marriage%20prop%20by%20country.csv",
     "format": { "type": "csv" }
   },
   "encoding": {
