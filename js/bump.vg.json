@@ -1,0 +1,82 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Bump chart of country ranks over time.",
+  "data": {
+    "url": "data/Marriage and div bump chart.csv",
+    "format": { "type": "csv" }
+  },
+  "width": 800,
+  "height": 300,
+  "autosize":{"type":"fit", "contains":"padding"},
+  "background": "transparent",
+  "transform": [
+    {
+      "calculate": "toNumber(datum['Marriage rate'])",
+      "as": "Marriage rate"
+    },
+    {
+      "window": [{ "op": "rank", "as": "rank" }],
+      "sort": [{ "field": "Marriage rate", "order": "descending" }],
+      "groupby": ["Year"]
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "ordinal",
+      "axis": {"labelAngle":0, "domain":false,
+        "labelPadding":20}
+    },
+    "y": {
+      "field": "rank",
+      "type": "quantitative",
+      "sort": "ascending",
+      "axis": {
+        "title": "Rank",
+        "format": "d",
+        "values": [1, 2, 3, 4, 5, 6, 7],
+        "grid": false,
+        "domain":false
+      },
+      "scale": { "reverse": true}
+    },
+    "detail": { "field": "Country" }
+  },
+  "layer": [
+    {
+      "mark": { "type": "line", "point": { "filled": true, "size": 200 } },
+      "encoding": {
+        "color": {
+          "condition": {
+            "test": "datum.Country == 'Australia'",
+            "value": "purple"
+          },
+          "value": "lightgray"
+        },
+        "tooltip": [
+          { "field": "Country" },
+          { "field": "Year" },
+          { "field": "Marriage rate" },
+          { "field": "rank" }
+        ]
+      }
+    },
+    {
+      "mark": { "type": "text", "align": "left", "dy": -20 },
+      "transform": [{ "filter": "datum.Year == 2022" }],
+      "encoding": {
+        "x": { "field": "Year", "type": "ordinal" },
+        "y": { "field": "rank", "type": "quantitative" },
+        "text": { "field": "Country" },
+        "color": {
+          "condition": {
+            "test": "datum.Country == 'Australia'",
+            "value": "purple"
+          },
+          "value": "lightgray"
+        }
+      }
+    }
+  ],
+  "config":{"view":{"stroke":null}}
+}

@@ -1,9 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Australian marriage and divorce count by age group in 2024",
-  "background": "#f5f5ea",
-  "width": 300,
-  "height": 300,
+  "title": "Australian marriag ",
+  "background": "transparent",
+  "width": 400,
+  "height": 400,
+  "autosize":{"type":"fit", "contains":"padding"},
   "params": [
     {
       "name": "Rate_type",

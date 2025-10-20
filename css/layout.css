@@ -1,0 +1,106 @@
+body {
+  margin:20px;
+}
+
+.layout {
+  display: grid;
+    grid-template-areas:
+    "title title"
+    "description1 description1"
+    "bump_chart bump_chart"
+    "description2 description3"
+    "map_chart bar_chart"
+    "description4 description4"
+    "heatmap_chart heatmap_chart"
+    "description5 description5"
+    "lollipop_chart ."
+    "description6 description7"
+    "isotype_chart spine_chart"
+    "credits credits";
+    
+  grid-template-columns: 1fr 1fr; /* 12 equal columns */
+  gap: 20px;
+}
+
+.layout > * {
+  padding:30px 30px 14px 30px;
+  border-radius: 20px;
+}
+
+.title {
+  grid-area:title;
+  justify-self:center;
+
+}
+
+.description1 {
+  grid-area:description1;
+  justify-self:center;
+  transform: translateX(-100px);
+}
+
+.bump_chart {
+  grid-area:bump_chart;
+  justify-self:center;
+}
+
+.description2 {
+  grid-area:description2;
+  justify-self:right;
+}
+
+.description3 {
+  grid-area:description3;
+  justify-self:left;
+}
+
+.map_chart {
+  grid-area:map_chart;
+  justify-self:end;
+
+}
+
+.bar_chart {
+  grid-area:bar_chart;
+  justify-self:start;
+}
+
+.description4 {
+  grid-area:description4;
+  justify-self:center;
+}
+
+.heatmap_chart {
+  grid-area:heatmap_chart;
+  justify-self:center;
+}
+
+.description5 {
+  grid-area:description5;
+  justify-self:center;
+}
+
+.lollipop_chart {
+  grid-area:lollipop_chart;
+  justify-self:end;
+}
+
+.description6 {
+  grid-area:description6;
+  justify-self:end;
+}
+
+.description7 {
+  grid-area:description7;
+  justify-self:start;
+}
+
+.isotype_chart {
+  grid-area:isotype_chart;
+  justify-self:end;
+}
+
+.credits {
+  grid-area:credits;
+  justify-self:center;
+} 

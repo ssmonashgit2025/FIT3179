@@ -1,13 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Marriage rate by Australian state in 2024",
-  "background": "#f5f5ea",
+  "background": "transparent",
   "vconcat": [
     {
       "hconcat": [
         {
-          "width": 300,
-          "height": 300,
+          "width": 400,
+          "height": 400,
           "projection": { "type": "mercator" },
           "layer": [
             {
@@ -44,8 +44,10 @@
                   "type": "quantitative",
                   "scale": {
                     "type": "linear",
-                    "domain": [2.8, 4.2, 4.5]
-                  }
+                    "domain": [2.8, 4.2, 4.5],
+                    "scheme":"purples"
+                  },
+                  "legend":{"title":null}
                 },
                 "tooltip": [
                   {"field": "properties.STE_NAME21", "type": "nominal", "title": "State" },

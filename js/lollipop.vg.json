@@ -1,12 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Global Same-sex marriage rates",
-  "background": "#f5f5ea",
-  "width": 300,
-  "height": 300,
-
+  "background": "transparent",
+  "width": 400,
+  "height": 400,
+  "autosize":{"type":"fit", "contains":"padding"},
   "data": {
-    "url": "https://raw.githubusercontent.com/ssmonashgit2025/FIT3179/refs/heads/main/data/Same-sex%20marriage%20prop%20by%20country.csv",
+    "url": "data/Mean age lollipop.csv",
     "format": { "type": "csv" }
   },
   "encoding": {
@@ -16,23 +16,38 @@
       "title": "Country",
       "axis": { "labelAngle": 90 }
     },
+    "xOffset": { "field": "Gender" },
     "y": {
-      "field": "Share",
+      "field": "Mean marriage age",
       "type": "quantitative",
-      "title": "Rate"
-    }
+      "title": "Age"
+    },
+    "color": {
+      "field": "Gender",
+      "type": "nominal",
+      "scale": { "range": ["#2596be", "#f28e2b"] }
+    },
+    "tooltip": [
+      { "field": "Country" },
+      { "field": "Gender" },
+      { "field": "Mean marriage age" }
+    ]
   },
   "layer": [
     {
-      "mark": "bar",
-      "encoding": {
-        "color": {
-          "value": "#2596be"
-
-        },
-        "tooltip": null
+      "mark": {
+        "type": "bar",
+        "size": 3,
+        "tooltip": true
+      }
+    },
+    {
+      "mark": {
+        "type":"point",
+        "size":500,
+        "filled":true,
+        "opacity":1
       }
     }
-  ],
-  "config": { "title": { "font": "sans-serif", "fontSize": 16 } }
+  ]
 }
