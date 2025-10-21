@@ -5,10 +5,13 @@
     "url": "https://raw.githubusercontent.com/ssmonashgit2025/FIT3179/refs/heads/main/data/Marriage%20and%20div%20bump%20chart.csv",
     "format": { "type": "csv" }
   },
-  "title": {"text":"Australian marriage rates ranked against select OECD countries", "color":"#55594f"},
-  "width": 980,
+  "title": {
+    "text": "Australian marriage rates ranked against select OECD countries",
+    "color": "#55594f"
+  },
+  "width": 990,
   "height": 300,
-  "autosize":{"type":"fit", "contains":"padding"},
+  "autosize": { "type": "fit", "contains": "padding" },
   "background": "transparent",
   "transform": [
     {
@@ -25,8 +28,7 @@
     "x": {
       "field": "Year",
       "type": "ordinal",
-      "axis": {"labelAngle":0, "domain":false,
-        "labelPadding":20}
+      "axis": { "labelAngle": 0, "domain": false, "labelPadding": 20 }
     },
     "y": {
       "field": "rank",
@@ -37,12 +39,12 @@
         "format": "d",
         "values": [1, 2, 3, 4, 5, 6, 7],
         "grid": false,
-        "domain":false,
-        "offset":-100,
-        "ticks":false,
-        "titlePadding":20
+        "domain": false,
+        "offset": -100,
+        "ticks": false,
+        "titlePadding": 20
       },
-      "scale": { "reverse": true}
+      "scale": { "reverse": true }
     },
     "detail": { "field": "Country" }
   },
@@ -58,9 +60,14 @@
           "value": "lightgray"
         },
         "tooltip": [
-          {"field": "Country"},
+          { "field": "Country" },
           { "field": "Year" },
-          { "field": "Marriage rate","type":"quantitative","title":"Marriage rate per thousand people","format": ".1f"},
+          {
+            "field": "Marriage rate",
+            "type": "quantitative",
+            "title": "Marriage rate per thousand people",
+            "format": ".1f"
+          },
           { "field": "rank" }
         ]
       }
@@ -82,5 +89,8 @@
       }
     }
   ],
-  "config":{"view":{"stroke":null},"title": { "font": "sans-serif", "fontSize": 16 } }
+  "config": {
+    "view": { "stroke": null },
+    "title": { "font": "sans-serif", "fontSize": 16 }
+  }
 }

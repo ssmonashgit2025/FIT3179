@@ -1,6 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {"text":"Marriage count by age group in 2024", "color":"#55594f"},
+  "title": {
+    "text": "Marriage count by age group in 2024",
+    "color": "#55594f"
+  },
   "background": "transparent",
   "width": 430,
   "height": 450,
@@ -27,8 +30,7 @@
     {
       "mark": "bar",
       "encoding": {
-        "color": {"value": "#C5A8E0"
-        },
+        "color": { "value": "#C5A8E0" },
         "tooltip": [
           { "field": "Age group", "type": "nominal", "title": "Age group" },
           {
@@ -41,31 +43,41 @@
       }
     },
     {
-      "transform": [
-        {"filter": "datum['Age group'] === '25 to 29'"}
-      ],
-      "mark": {"type": "text", "align": "center", "baseline": "bottom", "dy": 40, "dx":160, "color": "#55594f"},
+      "transform": [{ "filter": "datum['Age group'] === '25 to 29'" }],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "dy": 40,
+        "dx": 160,
+        "color": "#55594f"
+      },
       "encoding": {
-        "x": {"field": "Age group", "type": "ordinal"},
-        "y": {"field": "Marriages", "type": "quantitative"},
-        "text": {"value": "25 to 29 years old is the most common"}
+        "x": { "field": "Age group", "type": "ordinal" },
+        "y": { "field": "Marriages", "type": "quantitative" },
+        "text": { "value": "25 to 29 years old is the most common" }
       }
     },
     {
-
-      "transform": [
-        {"filter": "datum['Age group'] === '25 to 29'"}
-      ],
-      "mark": {"type": "text", "align": "center", "baseline": "bottom", "dy": 60, "dx":147, "color": "#55594f"},
+      "transform": [{ "filter": "datum['Age group'] === '25 to 29'" }],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "dy": 60,
+        "dx": 147,
+        "color": "#55594f"
+      },
       "encoding": {
-        "x": {"field": "Age group", "type": "ordinal"},
-        "y": {"field": "Marriages", "type": "quantitative"},
-        "text": {"value": "age for Australians to get married"}
+        "x": { "field": "Age group", "type": "ordinal" },
+        "y": { "field": "Marriages", "type": "quantitative" },
+        "text": { "value": "age for Australians to get married" }
       }
     }
   ],
   "config": {
     "view": { "stroke": null },
-    "axis": { "grid": false },"title": { "font": "sans-serif", "fontSize": 16 } 
+    "axis": { "grid": false },
+    "title": { "font": "sans-serif", "fontSize": 16 }
   }
 }

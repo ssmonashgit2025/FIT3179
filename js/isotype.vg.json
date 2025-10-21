@@ -3,7 +3,10 @@
   "data": {
     "url": "https://raw.githubusercontent.com/ssmonashgit2025/FIT3179/refs/heads/main/data/Same-sex%20marriage%20wafflechart.csv"
   },
-  "title": {"text":"A representation of Same-sex marriage in Australia", "color":"#55594f"},
+  "title": {
+    "text": "A representation of Same-sex marriage in Australia",
+    "color": "#55594f"
+  },
   "background": "transparent",
   "width": 430,
   "height": 450,
@@ -12,7 +15,7 @@
       "mark": {
         "type": "point",
         "size": 300,
-        "filled":true 
+        "filled": true
       },
       "encoding": {
         "x": {
@@ -30,7 +33,7 @@
           "sort": "y"
         },
         "shape": {
-          "value": "M1.7 -1.7h-0.8c0.3 -0.2 0.6 -0.5 0.6 -0.9c0 -0.6 -0.4 -1 -1 -1c-0.6 0 -1 0.4 -1 1c0 0.4 0.2 0.7 0.6 0.9h-0.8c-0.4 0 -0.7 0.3 -0.7 0.6v1.9c0 0.3 0.3 0.6 0.6 0.6h0.2c0 0 0 0.1 0 0.1v1.9c0 0.3 0.2 0.6 0.3 0.6h1.3c0.2 0 0.3 -0.3 0.3 -0.6v-1.8c0 0 0 -0.1 0 -0.1h0.2c0.3 0 0.6 -0.3 0.6 -0.6v-2c0.2 -0.3 -0.1 -0.6 -0.4 -0.6z" 
+          "value": "M1.7 -1.7h-0.8c0.3 -0.2 0.6 -0.5 0.6 -0.9c0 -0.6 -0.4 -1 -1 -1c-0.6 0 -1 0.4 -1 1c0 0.4 0.2 0.7 0.6 0.9h-0.8c-0.4 0 -0.7 0.3 -0.7 0.6v1.9c0 0.3 0.3 0.6 0.6 0.6h0.2c0 0 0 0.1 0 0.1v1.9c0 0.3 0.2 0.6 0.3 0.6h1.3c0.2 0 0.3 -0.3 0.3 -0.6v-1.8c0 0 0 -0.1 0 -0.1h0.2c0.3 0 0.6 -0.3 0.6 -0.6v-2c0.2 -0.3 -0.1 -0.6 -0.4 -0.6z"
         },
         "color": {
           "field": "Value",
@@ -46,6 +49,7 @@
   ],
   "config": {
     "view": { "stroke": null },
-    "axis": { "grid": false },"title": { "font": "sans-serif", "fontSize": 16 } 
+    "axis": { "grid": false },
+    "title": { "font": "sans-serif", "fontSize": 16 }
   }
 }

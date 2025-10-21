@@ -1,7 +1,6 @@
 var bump = "js/bump.vg.json";
 
-vegaEmbed("#bump", bump, {
-  actions: false,})
+vegaEmbed("#bump", bump)
   .then(function (result) {})
   .catch(console.error);
 
@@ -18,7 +17,6 @@ vegaEmbed("#bar", histogram_marriage)
   .catch(console.error);
 
 var histogram_divorce = "js/bar_divorce.vg.json";
-
 
 var heatmap = "js/heatmap.vg.json";
 vegaEmbed("#heatmap", heatmap)
@@ -45,29 +43,21 @@ vegaEmbed("#lollipop", lollipop)
   .then(function (result) {})
   .catch(console.error);
 
-
 // Button event listeners
-document
-  .getElementById("marriages_button")
-  .addEventListener("click", () => 
-  {
-    vegaEmbed("#map", map_marriage)
+document.getElementById("marriages_button").addEventListener("click", () => {
+  vegaEmbed("#map", map_marriage)
     .then(function (result) {})
     .catch(console.error);
-    vegaEmbed("#bar", histogram_marriage)
+  vegaEmbed("#bar", histogram_marriage)
     .then(function (result) {})
     .catch(console.error);
-  });
-    
-    
-document
-  .getElementById("divorces_button")
-  .addEventListener("click", () => 
-  {
-    vegaEmbed("#map", map_divorce)
+});
+
+document.getElementById("divorces_button").addEventListener("click", () => {
+  vegaEmbed("#map", map_divorce)
     .then(function (result) {})
     .catch(console.error);
-    vegaEmbed("#bar", histogram_divorce)
+  vegaEmbed("#bar", histogram_divorce)
     .then(function (result) {})
     .catch(console.error);
-  });
+});

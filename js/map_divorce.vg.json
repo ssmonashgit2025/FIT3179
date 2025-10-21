@@ -1,6 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {"text":"Divorce rate by Australian state in 2024", "color":"#55594f"},
+  "title": {
+    "text": "Divorce rate by Australian state in 2024",
+    "color": "#55594f"
+  },
   "background": "transparent",
   "width": 430,
   "height": 450,
@@ -87,7 +90,9 @@
     },
     {
       "data": {
-        "values": [{ "label": "NT also has the lowest divorce rate, while ACT" }]
+        "values": [
+          { "label": "NT also has the lowest divorce rate, while ACT" }
+        ]
       },
       "mark": {
         "type": "text",
@@ -105,7 +110,11 @@
     },
     {
       "data": {
-        "values": [{ "label": "dominates all other states, at 2.55 divorces per 1000 people" }]
+        "values": [
+          {
+            "label": "dominates all other states, at 2.55 divorces per 1000 people"
+          }
+        ]
       },
       "mark": {
         "type": "text",

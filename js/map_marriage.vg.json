@@ -91,7 +91,9 @@
     },
     {
       "data": {
-        "values": [{ "label": "NSW has the highest marriage rate at 4.67 marriages" }]
+        "values": [
+          { "label": "NSW has the highest marriage rate at 4.67 marriages" }
+        ]
       },
       "mark": {
         "type": "text",

@@ -1,6 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-  "title": { "text": "Previous marital status of newly married couples", "color": "#55594f" },
+  "title": {
+    "text": "Previous marital status of newly married couples",
+    "color": "#55594f"
+  },
   "background": "transparent",
   "width": 430,
   "height": 450,
@@ -40,7 +43,12 @@
     "tooltip": [
       { "field": "Country", "type": "nominal" },
       { "field": "Type", "type": "nominal" },
-      { "field": "Percent", "type": "quantitative", "title":"Marrying %","format": ".2f" }
+      {
+        "field": "Percent",
+        "type": "quantitative",
+        "title": "Marrying %",
+        "format": ".2f"
+      }
     ]
   },
   "config": {

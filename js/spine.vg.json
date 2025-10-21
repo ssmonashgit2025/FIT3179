@@ -1,6 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-  "title": {"text":"Average marriage age for various OECD countries", "color":"#55594f"},
+  "title": {
+    "text": "Average marriage age for various OECD countries",
+    "color": "#55594f"
+  },
   "background": "transparent",
   "width": 430,
   "height": 450,
@@ -26,12 +29,14 @@
       "aggregate": "sum",
       "field": "signed_age",
       "title": "Mean age",
-      "axis": { "format": "s",
-      "labelExpr": "abs(datum.value)" }
+      "axis": { "format": "s", "labelExpr": "abs(datum.value)" }
     },
     "color": {
       "field": "Gender",
-      "scale": {"domain":["Male", "Female"], "range": ["#afc57f", "#cba62c"] },
+      "scale": {
+        "domain": ["Male", "Female"],
+        "range": ["#afc57f", "#cba62c"]
+      },
       "legend": { "orient": "top", "title": null }
     }
   },
@@ -39,27 +44,41 @@
     {
       "mark": { "type": "bar", "size": 3, "tooltip": true },
       "encoding": {
-      "tooltip": [
-        {"field": "Country", "type": "nominal"},
-        {"field": "Gender", "type": "nominal"},
-        {"field": "Mean marriage age", "type": "quantitative", "title":"Average marriage age","format": ".1f"}
-      ]
-    }
+        "tooltip": [
+          { "field": "Country", "type": "nominal" },
+          { "field": "Gender", "type": "nominal" },
+          {
+            "field": "Mean marriage age",
+            "type": "quantitative",
+            "title": "Average marriage age",
+            "format": ".1f"
+          }
+        ]
+      }
     },
     {
-      "mark": { "type": "point", 
-      "size": 400, 
-      "filled":true },
+      "mark": { "type": "point", "size": 400, "filled": true },
       "encoding": {
-      "tooltip": [
-        {"field": "Country", "type": "nominal"},
-        {"field": "Gender", "type": "nominal"},
-        {"field": "Mean marriage age", "type": "quantitative", "title": "Average marriage age", "format": ".1f"}
-      ]
-    }
+        "tooltip": [
+          { "field": "Country", "type": "nominal" },
+          { "field": "Gender", "type": "nominal" },
+          {
+            "field": "Mean marriage age",
+            "type": "quantitative",
+            "title": "Average marriage age",
+            "format": ".1f"
+          }
+        ]
+      }
     },
     {
-      "mark": { "type": "text", "align": "center", "baseline": "bottom", "dx": 0, "dy": -2 },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "dx": 0,
+        "dy": -2
+      },
       "encoding": {
         "y": { "field": "Country" },
         "x": { "aggregate": "sum", "field": "signed_age" },
@@ -70,6 +89,7 @@
   ],
   "config": {
     "view": { "stroke": null },
-    "axis": { "grid": false },"title": { "font": "sans-serif", "fontSize": 16 } 
+    "axis": { "grid": false },
+    "title": { "font": "sans-serif", "fontSize": 16 }
   }
 }
