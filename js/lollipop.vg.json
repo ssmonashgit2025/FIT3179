@@ -1,6 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-  "title": {"text":"Same-sex marriage rate for various OECD countries", "color":"#55594f"},
+  "title": {
+    "text": "Same-sex marriage rate for various OECD countries",
+    "color": "#55594f"
+  },
   "background": "transparent",
   "width": 430,
   "height": 450,
@@ -13,9 +16,9 @@
     "x": {
       "field": "Country",
       "type": "nominal",
-      "sort":["UK","Australia","Germany","Sweden","Iceland"]
+      "sort": ["UK", "Australia", "Germany", "Sweden", "Iceland"]
     },
-    "y": { 
+    "y": {
       "field": "Share",
       "type": "quantitative",
       "title": "Share of same-sex marriages (%)"
@@ -24,29 +27,66 @@
   "layer": [
     {
       "mark": { "type": "bar", "size": 3, "tooltip": true },
-      "encoding":{
+      "encoding": {
         "color": {
-          "condition": { "test": "datum.Country == 'Australia'", "value": "red" },
+          "condition": {
+            "test": "datum.Country == 'Australia'",
+            "value": "red"
+          },
           "value": "#ccc"
-        }
+        },
+        "tooltip": [
+          { "field": "Country", "type": "nominal" },
+          {
+            "field": "Share",
+            "type": "quantitative",
+            "title": "Share of same-sex marriage (%)",
+            "format": ".2f"
+          },
+          {
+            "field": "Date of legal recognition",
+            "type": "ordinal",
+            "title": "Date of legal recognition"
+          }
+        ]
       }
     },
     {
-      "mark": { "type": "point", 
-      "size": 400, 
-      "tooltip": true, 
-      "filled":true, 
-    "opacity":1},
-      "encoding":{
+      "mark": {
+        "type": "point",
+        "size": 400,
+
+        "filled": true,
+        "opacity": 1
+      },
+      "encoding": {
         "color": {
-          "condition": { "test": "datum.Country == 'Australia'", "value": "red" },
+          "condition": {
+            "test": "datum.Country == 'Australia'",
+            "value": "red"
+          },
           "value": "#ccc"
-        }
+        },
+        "tooltip": [
+          { "field": "Country", "type": "nominal" },
+          {
+            "field": "Share",
+            "type": "quantitative",
+            "title": "Share of same-sex marriage (%)",
+            "format": ".2f"
+          },
+          {
+            "field": "Date of legal recognition",
+            "type": "ordinal",
+            "title": "Date of legal recognition"
+          }
+        ]
       }
     }
   ],
   "config": {
     "view": { "stroke": null },
-    "axis": { "grid": false },"title": { "font": "sans-serif", "fontSize": 16 } 
+    "axis": { "grid": false },
+    "title": { "font": "sans-serif", "fontSize": 16 }
   }
 }

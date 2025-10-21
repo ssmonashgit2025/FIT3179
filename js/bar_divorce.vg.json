@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {"text":"Divorce count by age group ", "color":"#55594f"},
+  "title": {"text":"Divorce count by age group in 2024", "color":"#55594f"},
   "background": "transparent",
   "width": 430,
   "height": 450,

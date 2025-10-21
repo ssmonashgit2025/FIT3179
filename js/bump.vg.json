@@ -6,7 +6,7 @@
     "format": { "type": "csv" }
   },
   "title": {"text":"Australian marriage rates ranked against select OECD countries", "color":"#55594f"},
-  "width": 1000,
+  "width": 980,
   "height": 300,
   "autosize":{"type":"fit", "contains":"padding"},
   "background": "transparent",
@@ -60,7 +60,7 @@
         "tooltip": [
           {"field": "Country"},
           { "field": "Year" },
-          { "field": "Marriage rate","type":"quantitative","title":"Marriage rate"},
+          { "field": "Marriage rate","type":"quantitative","title":"Marriage rate per thousand people","format": ".1f"},
           { "field": "rank" }
         ]
       }

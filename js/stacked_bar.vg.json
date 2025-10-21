@@ -1,11 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-  "title": {"text":"Marriage types", "color":"#55594f"},
+  "title": { "text": "Previous marital status of newly married couples", "color": "#55594f" },
   "background": "transparent",
   "width": 430,
   "height": 450,
   "autosize": { "type": "fit", "contains": "padding" },
-  "data": { "url": "https://raw.githubusercontent.com/ssmonashgit2025/FIT3179/refs/heads/main/data/Marriage%20types%20stacked%20bar.csv" },
+  "data": {
+    "url": "https://raw.githubusercontent.com/ssmonashgit2025/FIT3179/refs/heads/main/data/Marriage%20types%20stacked%20bar.csv"
+  },
   "transform": [
     {
       "calculate": "indexof(['First marriage', 'Divorced', 'Widowed'], datum.Type)",
@@ -21,22 +23,29 @@
     },
     "y": {
       "field": "Percent",
-      "type": "quantitative"
+      "type": "quantitative",
+      "title": "Marriage percentage"
     },
     "color": {
       "field": "Type",
       "type": "nominal",
       "title": "Marriage type",
       "scale": {
-      "domain": ["Widowed", "Divorced", "First marriage"],
-      "range": ["#899cbb", "#e6adf0", "#802323"]
+        "domain": ["Widowed", "Divorced", "First marriage"],
+        "range": ["#899cbb", "#e6adf0", "#802323"]
+      },
+      "legend": null
     },
-    "legend": null
-    },
-    "order": {"field": "order", "type": "ordinal"}
+    "order": { "field": "order", "type": "ordinal" },
+    "tooltip": [
+      { "field": "Country", "type": "nominal" },
+      { "field": "Type", "type": "nominal" },
+      { "field": "Percent", "type": "quantitative", "title":"Marrying %","format": ".2f" }
+    ]
   },
   "config": {
     "view": { "stroke": null },
-    "axis": { "grid": false },"title": { "font": "sans-serif", "fontSize": 16 } 
+    "axis": { "grid": false },
+    "title": { "font": "sans-serif", "fontSize": 16 }
   }
 }

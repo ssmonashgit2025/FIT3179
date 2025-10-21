@@ -3,11 +3,14 @@
   "data": {
     "url": "https://raw.githubusercontent.com/ssmonashgit2025/FIT3179/refs/heads/main/data/Marriage%20month%20heatmap.csv"
   },
-  "title": {"text":"Heatmap of marriage numbers broken down by month", "color":"#55594f"},
+  "title": {
+    "text": "Heatmap of Australian marriage numbers broken down by month",
+    "color": "#55594f"
+  },
   "background": "transparent",
-  "width": 1000,
+  "width": 980,
   "height": 200,
-  "autosize":{"type":"fit", "contains":"padding"},
+  "autosize": { "type": "fit", "contains": "padding" },
   "layer": [
     {
       "mark": "rect",
@@ -46,7 +49,12 @@
           "legend": {
             "title": null
           }
-        }
+        },
+        "tooltip": [
+          { "field": "Year", "type": "ordinal" },
+          { "field": "Month", "type": "ordinal" },
+          { "field": "Marriage count", "type": "quantitative", "format": "," }
+        ]
       }
     }
   ],

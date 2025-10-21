@@ -37,10 +37,26 @@
   },
   "layer": [
     {
-      "mark": { "type": "bar", "size": 3, "tooltip": true }
+      "mark": { "type": "bar", "size": 3, "tooltip": true },
+      "encoding": {
+      "tooltip": [
+        {"field": "Country", "type": "nominal"},
+        {"field": "Gender", "type": "nominal"},
+        {"field": "Mean marriage age", "type": "quantitative", "title":"Average marriage age","format": ".1f"}
+      ]
+    }
     },
     {
-      "mark": { "type": "point", "size": 400, "tooltip": true, "filled":true }
+      "mark": { "type": "point", 
+      "size": 400, 
+      "filled":true },
+      "encoding": {
+      "tooltip": [
+        {"field": "Country", "type": "nominal"},
+        {"field": "Gender", "type": "nominal"},
+        {"field": "Mean marriage age", "type": "quantitative", "title": "Average marriage age", "format": ".1f"}
+      ]
+    }
     },
     {
       "mark": { "type": "text", "align": "center", "baseline": "bottom", "dx": 0, "dy": -2 },
