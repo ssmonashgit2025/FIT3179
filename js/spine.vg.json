@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-  "title": "Average marriage for various OECD countries",
+  "title": {"text":"Average marriage age for various OECD countries", "color":"#55594f"},
   "background": "transparent",
   "width": 430,
   "height": 450,
@@ -26,11 +26,12 @@
       "aggregate": "sum",
       "field": "signed_age",
       "title": "Mean age",
-      "axis": { "format": "s" }
+      "axis": { "format": "s",
+      "labelExpr": "abs(datum.value)" }
     },
     "color": {
       "field": "Gender",
-      "scale": { "range": ["#675193", "#ca8861"] },
+      "scale": {"domain":["Male", "Female"], "range": ["#afc57f", "#cba62c"] },
       "legend": { "orient": "top", "title": null }
     }
   },
@@ -40,10 +41,19 @@
     },
     {
       "mark": { "type": "point", "size": 400, "tooltip": true, "filled":true }
+    },
+    {
+      "mark": { "type": "text", "align": "center", "baseline": "bottom", "dx": 0, "dy": -2 },
+      "encoding": {
+        "y": { "field": "Country" },
+        "x": { "aggregate": "sum", "field": "signed_age" },
+        "text": { "field": "Country" },
+        "color": { "value": "#55594f" }
+      }
     }
   ],
   "config": {
     "view": { "stroke": null },
-    "axis": { "grid": false }
+    "axis": { "grid": false },"title": { "font": "sans-serif", "fontSize": 16 } 
   }
 }

@@ -1,0 +1,72 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text":"Divorce count by age group ", "color":"#55594f"},
+  "background": "transparent",
+  "width": 430,
+  "height": 450,
+  "autosize": { "type": "fit", "contains": "padding" },
+  "data": {
+    "url": "https://raw.githubusercontent.com/ssmonashgit2025/FIT3179/refs/heads/main/data/Marriage%20and%20divorce%20rate%20by%20age%20group.csv",
+    "format": { "type": "csv" }
+  },
+
+  "encoding": {
+    "x": {
+      "field": "Age group",
+      "type": "ordinal",
+      "title": "Age Group",
+      "axis": { "labelAngle": 45 }
+    },
+    "y": {
+      "field": "Divorces",
+      "type": "quantitative",
+      "title": "Divorce count",
+      "scale": { "domain": [0, 75000] }
+    }
+  },
+  "layer": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "color": {"value": "#F0AD73"
+        },
+        "tooltip": [
+          { "field": "Age group", "type": "nominal", "title": "Age group" },
+          {
+            "field": "Divorces",
+            "type": "quantitative",
+            "title": "Divorce count",
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {"filter": "datum['Age group'] === '25 to 29'"}
+      ],
+      "mark": {"type": "text", "align": "center", "baseline": "bottom", "dy": 140, "dx":140, "color": "#55594f"},
+      "encoding": {
+        "x": {"field": "Age group", "type": "ordinal"},
+        "y": {"field": "Marriages", "type": "quantitative"},
+        "text": {"value": "Australians tend to divorce in "}
+      }
+    },
+    {
+
+      "transform": [
+        {"filter": "datum['Age group'] === '25 to 29'"}
+      ],
+      "mark": {"type": "text", "align": "center", "baseline": "bottom", "dy": 160, "dx":105, "color": "#55594f"},
+      "encoding": {
+        "x": {"field": "Age group", "type": "ordinal"},
+        "y": {"field": "Marriages", "type": "quantitative"},
+        "text": {"value": "their early 40s"}
+      }
+    }
+  ],
+  "config": {
+    "view": { "stroke": null },
+    "axis": { "grid": false },"title": { "font": "sans-serif", "fontSize": 16 } 
+  }
+}

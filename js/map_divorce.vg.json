@@ -1,0 +1,127 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text":"Divorce rate by Australian state in 2024", "color":"#55594f"},
+  "background": "transparent",
+  "width": 430,
+  "height": 450,
+  "autosize": { "type": "fit", "contains": "padding" },
+  "projection": { "type": "mercator" },
+  "layer": [
+    {
+      "data": {
+        "url": "js/AUSDAT.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "STE_2021_AUST_GDA2020"
+        }
+      },
+
+      "transform": [
+        {
+          "lookup": "properties.STE_NAME21",
+          "from": {
+            "data": {
+              "url": "data/Marriage and divorce rate by state.csv"
+            },
+            "key": "State",
+            "fields": ["Divorce_rate", "Divorces_tot"]
+          }
+        },
+        {
+          "calculate": "toNumber(datum.Divorce_rate)",
+          "as": "Divorces per 1000 people"
+        }
+      ],
+      "mark": {
+        "type": "geoshape"
+      },
+      "encoding": {
+        "color": {
+          "field": "Divorces per 1000 people",
+          "type": "quantitative",
+          "scale": {
+            "type": "linear",
+            "scheme": "oranges"
+          },
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "titleOrient": "bottom"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "properties.STE_NAME21",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "Divorce_rate",
+            "type": "quantitative",
+            "title": "Divorces per 1000 people",
+            "format": ".2f"
+          },
+          {
+            "field": "Divorces_tot",
+            "type": "quantitative",
+            "title": "Total divorces",
+            "format": ","
+          }
+        ]
+      }
+    },
+
+    {
+      "data": {
+        "url": "js/AUSDAT.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "ne_10m_graticules_10"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": null,
+        "stroke": "lightgray"
+      }
+    },
+    {
+      "data": {
+        "values": [{ "label": "NT also has the lowest divorce rate, while ACT" }]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "dx": 10,
+        "dy": 320,
+        "color": "#55594f"
+      },
+      "encoding": {
+        "x": { "value": 0 },
+        "y": { "value": 0 },
+        "text": { "field": "label" }
+      }
+    },
+    {
+      "data": {
+        "values": [{ "label": "dominates all other states, at 2.55 divorces per 1000 people" }]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "dx": 10,
+        "dy": 340,
+        "color": "#55594f"
+      },
+      "encoding": {
+        "x": { "value": 0 },
+        "y": { "value": 0 },
+        "text": { "field": "label" }
+      }
+    }
+  ],
+
+  "config": { "title": { "font": "sans-serif", "fontSize": 16 } }
+}

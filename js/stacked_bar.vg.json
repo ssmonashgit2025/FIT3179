@@ -1,11 +1,17 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-  "title": "Marriage types",
+  "title": {"text":"Marriage types", "color":"#55594f"},
   "background": "transparent",
   "width": 430,
   "height": 450,
   "autosize": { "type": "fit", "contains": "padding" },
   "data": { "url": "data/Marriage types stacked bar.csv" },
+  "transform": [
+    {
+      "calculate": "indexof(['First marriage', 'Divorced', 'Widowed'], datum.Type)",
+      "as": "order"
+    }
+  ],
   "mark": "bar",
   "encoding": {
     "x": {
@@ -21,7 +27,16 @@
       "field": "Type",
       "type": "nominal",
       "title": "Marriage type",
-      "legend":null
-    }
+      "scale": {
+      "domain": ["Widowed", "Divorced", "First marriage"],
+      "range": ["#899cbb", "#e6adf0", "#802323"]
+    },
+    "legend": null
+    },
+    "order": {"field": "order", "type": "ordinal"}
+  },
+  "config": {
+    "view": { "stroke": null },
+    "axis": { "grid": false },"title": { "font": "sans-serif", "fontSize": 16 } 
   }
 }

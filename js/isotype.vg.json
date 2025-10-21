@@ -3,7 +3,7 @@
   "data": {
     "url": "data/Same-sex marriage wafflechart.csv"
   },
-  "title": "Proportion of same-sex marriages",
+  "title": {"text":"A representation of Same-sex marriage in Australia", "color":"#55594f"},
   "background": "transparent",
   "width": 430,
   "height": 450,
@@ -46,6 +46,6 @@
   ],
   "config": {
     "view": { "stroke": null },
-    "axis": { "grid": false }
+    "axis": { "grid": false },"title": { "font": "sans-serif", "fontSize": 16 } 
   }
 }

@@ -3,7 +3,7 @@
   "data": {
     "url": "https://raw.githubusercontent.com/ssmonashgit2025/FIT3179/refs/heads/main/data/Marriage%20month%20heatmap.csv"
   },
-  "title": "Heatmap of marriage numbers broken down by month",
+  "title": {"text":"Heatmap of marriage numbers broken down by month", "color":"#55594f"},
   "background": "transparent",
   "width": 1000,
   "height": 200,

@@ -9,6 +9,7 @@ body {
     "description1 description1"
     "bump_chart bump_chart"
     "description2 description3"
+    "marriage_div_button marriage_div_button"
     "map_chart bar_chart"
     "description4a description4b"
     "heatmap_chart heatmap_chart"
@@ -38,7 +39,6 @@ body {
 .description1 {
   grid-area:description1;
   justify-self:center;
-  transform: translateX(-100px);
 }
 
 .bump_chart {
@@ -54,6 +54,12 @@ body {
 .description3 {
   grid-area:description3;
   justify-self:start;
+}
+
+.marriage_div_button {
+  padding-top:5px;
+  grid-area:marriage_div_button;
+  justify-self:center;
 }
 
 .map_chart {

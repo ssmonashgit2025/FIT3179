@@ -1,16 +1,16 @@
 Country,Type,Percent
-Australia,First marriage,81.8
-Australia,Divorced,17.1
 Australia,Widowed,1.2
-Germany,First marriage,76.13886008
-Germany,Divorced,22.57588443
+Australia,Divorced,17.1
+Australia,First marriage,81.8
 Germany,Widowed,1.285255489
-Sweden,First marriage,78.7
-Sweden,Divorced,20.3
+Germany,Divorced,22.57588443
+Germany,First marriage,76.13886008
 Sweden,Widowed,1
-Iceland,First marriage,79.62243198
-Iceland,Divorced,19.2948362
+Sweden,Divorced,20.3
+Sweden,First marriage,78.7
 Iceland,Widowed,1.082731816
-UK,First marriage,76.1
-UK,Divorced,21.9
+Iceland,Divorced,19.2948362
+Iceland,First marriage,79.62243198
 UK,Widowed,2
+UK,Divorced,21.9
+UK,First marriage,76.1
