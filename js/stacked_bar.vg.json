@@ -5,7 +5,7 @@
   "width": 430,
   "height": 450,
   "autosize": { "type": "fit", "contains": "padding" },
-  "data": { "url": "data/Marriage types stacked bar.csv" },
+  "data": { "url": "https://raw.githubusercontent.com/ssmonashgit2025/FIT3179/refs/heads/main/data/Marriage%20types%20stacked%20bar.csv" },
   "transform": [
     {
       "calculate": "indexof(['First marriage', 'Divorced', 'Widowed'], datum.Type)",

@@ -12,7 +12,7 @@
   "layer": [
     {
       "data": {
-        "url": "js/AUSDAT.topojson",
+        "url": "https://raw.githubusercontent.com/ssmonashgit2025/FIT3179/refs/heads/main/js/AUSDAT.topojson",
         "format": {
           "type": "topojson",
           "feature": "STE_2021_AUST_GDA2020"
@@ -77,7 +77,7 @@
 
     {
       "data": {
-        "url": "js/AUSDAT.topojson",
+        "url": "https://raw.githubusercontent.com/ssmonashgit2025/FIT3179/refs/heads/main/js/AUSDAT.topojson",
         "format": {
           "type": "topojson",
           "feature": "ne_10m_graticules_10"

@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
-    "url": "data/Same-sex marriage wafflechart.csv"
+    "url": "https://raw.githubusercontent.com/ssmonashgit2025/FIT3179/refs/heads/main/data/Same-sex%20marriage%20wafflechart.csv"
   },
   "title": {"text":"A representation of Same-sex marriage in Australia", "color":"#55594f"},
   "background": "transparent",
