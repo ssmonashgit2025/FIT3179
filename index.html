@@ -27,12 +27,23 @@
     <div class="layout">
 
         <div class = "title panel">
-            <h1>Marriage and Divorce in Australia</h1>
-            <p>Marriage has been seen as the hallmarks of a traditional<br>family for years. Recently, people have started to move
-            <br>away from marriage, rejecting the tradition as outdated.<br> Let's see how marriage has evolved in recent years</p>
+            <h1>Marriage and Divorce in Australia and the world</h1>
+            <p id = "introduction"> Marriage in an ancient tradition, woven into cultures worldwide. But
+            not all unions are meant to last,<br> and divorce is
+            an equally important part of the story. This dashboard present data of Marriage and <br> Divorce in 
+            Australia, and compares these statistics to member countries of the <i>Organisation for <br>
+            Economic Co-operation and Development</i> (OECD). </p>
         </div>
 
         <div class = "description1 panel">
+            <h2>A global overview: How Australia compares to various OECD countries </h2>
+            <p>The bump chart showcases how Australian Marriage and Divorce rates <br>
+            have evolved over time with respect to various OECD countries.<br>
+            While Australia appears to have improved in comparison to the <br>
+            other countries, overall marriage rates have been declining worldwide, and <br>
+            Australia is no exception. <br>
+           <b>Hover over the points in the bump chart to see <br> 
+            more data, and select a rate type from the dropdown.</b></p>
             
         </div>
 
@@ -41,14 +52,19 @@
         </div>
 
         <div class = "description2 panel">
-            <h2>A basis of region</h2>
-            <p>The choropleth map below shows the marriage or divorce rate,<br>depending on the dropdown selection.
-            This map shows the<br>marriage rate per thousand people, <i>over the age of 16</i>  </p>
+            <h2>Let's break it down by Australian states</h2>
+            <p>The choropleth map below shows the Marriage or Divorce<br>
+                rates for each Australian states. Note that the data is <br>
+                normalised per 1000 people <i>over the age of 16.</i> 
+            </p>
         </div>
 
         <div class = "description3 panel">
-            <h2>Let's break it down by age group</h2>
-            <p>for many a year, australians have been engaign in marriage</p>
+            <h2>The statistics by age groups</h2>
+            <p>The histogram below shows statistics for marriage and<br>
+            divorce, broken down by age group. The results are clear:<br>
+            People tend to get married in their late 20s, and divorced<br>
+            around their early 40s.</p>
         </div>
 
         <div class="map_chart panel">
@@ -63,28 +79,68 @@
             <div id = "heatmap"></div>
         </div>
 
-        <div class = "description4 panel">
-            <p>for many a year, australians have been engaign in marriage</p>
+        <div class = "description4a panel">
+            <h2>What's the Australian marriage season</h2>
+            <p>Everybody loves a good wedding! But when's the best time?
+                <br> The heatmap below suggests late Spring or early Autumn
+            <br> Not too hot or not too cold, perhaps? </p>
         </div>
 
-        <div class = "description5 panel">
-            <p>for many a year, australians have been engaign in marriage</p>
+        <div class = "description4b panel">
+            <p>2020 and 2021 showcases lower overall marriage numbers<br>
+            likely as a result of the COVID-19 pandemic that ravaged <br>
+            the world. Business closures and lockdown restrictions <br>
+            would have put a damper on wedding party!  </p>
+
         </div>
 
-        <div class = "lollipop_chart panel">
-            <div id = "lollipop"></div>
+        <div class = "description5a panel">
+            <h2>Australia vs the world: Marriage indicators</h2>
+            <p>In this section, let's compare Australia's average marriage<br>
+            age to some other OECD countries, for both genders. </p>
+        </div>
+
+        <div class = "description5b panel">
+            <h2>Who's getting married?</h2>
+            <p>Not everyone gets married under the same circumstances.<br>
+            Sometimes people are getting married for the first time,<br>
+            and sometimes they've been married before. The stacked<br>
+            column chart below shows the proportion of single, <br>
+            divorced, and widowed people getting married, by country.</a></p>
+        </div>
+
+        <div class = "spine_chart panel">
+            <div id = "spine"></div>
+        </div>
+
+        <div class = "stacked_bar_chart panel">
+            <div id = "stacked_bar"></div>
         </div>
 
         <div class = "description6 panel">
-            <p>for many a year, australians have been engaign in marriage</p>
+            <h2>A diverse story</h2>
+            <p>Marriages between different genders has been the norm &nbsp;&nbsp;&nbsp;<br>
+            for many years. But times are changing, and same-sex<br>
+            marriages have become increasingly common in society. <br>
+            Currently, about <b><i>1 in 25 married Australians </i></b> are<br>
+            in a same sex relationship</p>
         </div>
 
         <div class = "description7 panel">
-            <p>for many a year, australians have been engaign in marriage</p>
+            <h2>A global perspective on same-sex mariage</h2>
+            <p>Not all countries are as accepting. Same-sex marriage is<br>
+            still illegal in many countries worldwide. In fact, it wasn't<br>
+            until the mid 2010s when same-sex marriage was legalised <br>
+            in countries that are seen as comparatively progressive.<br>
+            Same-sex marriage was only legalised in Australia in 2017!</p>
         </div>
 
         <div class = "isotype_chart panel">
             <div id = "isotype"></div>
+        </div>
+
+        <div class = 'lollipop_chart panel'>
+            <div id = "lollipop"></div>
         </div>
 
         <div class = "credits panel">
@@ -122,12 +178,20 @@
         vegaEmbed('#heatmap', spec4).then(function (result) {
         }).catch(console.error);
 
-        var spec5 = "js/lollipop.vg.json";
-        vegaEmbed('#lollipop', spec5).then(function (result) {
+        var spec5 = "js/spine.vg.json";
+        vegaEmbed('#spine', spec5).then(function (result) {
         }).catch(console.error);
 
-        var spec6 = "js/isotype.vg.json";
-        vegaEmbed('#isotype', spec6).then(function (result) {
+        var spec6 = "js/stacked_bar.vg.json";
+        vegaEmbed('#stacked_bar', spec6).then(function (result) {
+        }).catch(console.error);
+
+        var spec7 = "js/isotype.vg.json";
+        vegaEmbed('#isotype', spec7).then(function (result) {
+        }).catch(console.error);
+
+        var spec8 = "js/lollipop.vg.json";
+        vegaEmbed('#lollipop', spec8).then(function (result) {
         }).catch(console.error);
 
     </script>

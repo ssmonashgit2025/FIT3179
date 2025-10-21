@@ -1,53 +1,51 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Global Same-sex marriage rates",
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": "Same-sex marriage rate for various OECD countries",
   "background": "transparent",
-  "width": 400,
-  "height": 400,
-  "autosize":{"type":"fit", "contains":"padding"},
+  "width": 430,
+  "height": 450,
+  "autosize": { "type": "fit", "contains": "padding" },
   "data": {
-    "url": "data/Mean age lollipop.csv",
+    "url": "data/Same-sex lollipop.csv",
     "format": { "type": "csv" }
   },
   "encoding": {
     "x": {
       "field": "Country",
-      "type": "nominal",
-      "title": "Country",
-      "axis": { "labelAngle": 90 }
+      "type": "nominal"
     },
-    "xOffset": { "field": "Gender" },
-    "y": {
-      "field": "Mean marriage age",
+    "y": { 
+      "field": "Share",
       "type": "quantitative",
-      "title": "Age"
-    },
-    "color": {
-      "field": "Gender",
-      "type": "nominal",
-      "scale": { "range": ["#2596be", "#f28e2b"] }
-    },
-    "tooltip": [
-      { "field": "Country" },
-      { "field": "Gender" },
-      { "field": "Mean marriage age" }
-    ]
+      "title": "Share of same-sex marriages"
+    }
   },
   "layer": [
     {
-      "mark": {
-        "type": "bar",
-        "size": 3,
-        "tooltip": true
+      "mark": { "type": "bar", "size": 3, "tooltip": true },
+      "encoding":{
+        "color": {
+          "condition": { "test": "datum.Country == 'Australia'", "value": "red" },
+          "value": "#ccc"
+        }
       }
     },
     {
-      "mark": {
-        "type":"point",
-        "size":500,
-        "filled":true,
-        "opacity":1
+      "mark": { "type": "point", 
+      "size": 400, 
+      "tooltip": true, 
+      "filled":true, 
+    "opacity":1},
+      "encoding":{
+        "color": {
+          "condition": { "test": "datum.Country == 'Australia'", "value": "red" },
+          "value": "#ccc"
+        }
       }
     }
-  ]
+  ],
+  "config": {
+    "view": { "stroke": null },
+    "axis": { "grid": false }
+  }
 }

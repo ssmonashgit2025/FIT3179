@@ -10,12 +10,12 @@ body {
     "bump_chart bump_chart"
     "description2 description3"
     "map_chart bar_chart"
-    "description4 description4"
+    "description4a description4b"
     "heatmap_chart heatmap_chart"
-    "description5 description5"
-    "lollipop_chart ."
+    "description5a description5b"
+    "spine_chart stacked_bar_chart"
     "description6 description7"
-    "isotype_chart spine_chart"
+    "isotype_chart lollipop_chart"
     "credits credits";
     
   grid-template-columns: 1fr 1fr; /* 12 equal columns */
@@ -30,6 +30,8 @@ body {
 .title {
   grid-area:title;
   justify-self:center;
+  background-color:transparent;
+  transform: translateX(-10px);
 
 }
 
@@ -46,12 +48,12 @@ body {
 
 .description2 {
   grid-area:description2;
-  justify-self:right;
+  justify-self:end;
 }
 
 .description3 {
   grid-area:description3;
-  justify-self:left;
+  justify-self:start;
 }
 
 .map_chart {
@@ -65,9 +67,14 @@ body {
   justify-self:start;
 }
 
-.description4 {
-  grid-area:description4;
-  justify-self:center;
+.description4a {
+  grid-area:description4a;
+  justify-self:end;
+}
+
+.description4b {
+  grid-area:description4b;
+  justify-self:start;
 }
 
 .heatmap_chart {
@@ -75,14 +82,24 @@ body {
   justify-self:center;
 }
 
-.description5 {
-  grid-area:description5;
-  justify-self:center;
+.description5a {
+  grid-area:description5a;
+  justify-self:end;
 }
 
-.lollipop_chart {
-  grid-area:lollipop_chart;
+.description5b {
+  grid-area:description5b;
+  justify-self:start;
+}
+
+.spine_chart {
+  grid-area:spine_chart;
   justify-self:end;
+}
+
+.stacked_bar_chart {
+  grid-area:stacked_bar_chart;
+  justify-self:start;
 }
 
 .description6 {
@@ -98,6 +115,11 @@ body {
 .isotype_chart {
   grid-area:isotype_chart;
   justify-self:end;
+}
+
+.lollipop_chart {
+  grid-area:lollipop_chart;
+  justify-self:start;
 }
 
 .credits {

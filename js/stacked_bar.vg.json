@@ -1,0 +1,27 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": "Marriage types",
+  "background": "transparent",
+  "width": 430,
+  "height": 450,
+  "autosize": { "type": "fit", "contains": "padding" },
+  "data": { "url": "data/Marriage types stacked bar.csv" },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "Country",
+      "type": "nominal",
+      "title": "Country"
+    },
+    "y": {
+      "field": "Percent",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "Type",
+      "type": "nominal",
+      "title": "Marriage type",
+      "legend":null
+    }
+  }
+}

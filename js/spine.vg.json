@@ -1,0 +1,49 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": "Average marriage for various OECD countries",
+  "background": "transparent",
+  "width": 430,
+  "height": 450,
+  "autosize": { "type": "fit", "contains": "padding" },
+  "data": {
+    "url": "data/Mean age spine.csv",
+    "format": { "type": "csv" }
+  },
+  "transform": [
+    {
+      "calculate": "datum.Gender == 'Male' ? -datum['Mean marriage age'] : datum['Mean marriage age']",
+      "as": "signed_age"
+    }
+  ],
+
+  "encoding": {
+    "y": {
+      "field": "Country",
+      "axis": null,
+      "sort": "descending"
+    },
+    "x": {
+      "aggregate": "sum",
+      "field": "signed_age",
+      "title": "Mean age",
+      "axis": { "format": "s" }
+    },
+    "color": {
+      "field": "Gender",
+      "scale": { "range": ["#675193", "#ca8861"] },
+      "legend": { "orient": "top", "title": null }
+    }
+  },
+  "layer": [
+    {
+      "mark": { "type": "bar", "size": 3, "tooltip": true }
+    },
+    {
+      "mark": { "type": "point", "size": 400, "tooltip": true, "filled":true }
+    }
+  ],
+  "config": {
+    "view": { "stroke": null },
+    "axis": { "grid": false }
+  }
+}
